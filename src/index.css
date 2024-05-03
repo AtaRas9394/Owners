@@ -1,0 +1,42 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+background-color: #ffffff;
+border-radius: 100px;
+height:100%;
+}
+::-webkit-scrollbar-thumb {
+background: #6e6e6e;
+border-radius: 100px;
+height:20px;
+width: 130px;
+}
+h1, h2, h3, h4, h5, h6, p, table, th, td, div, ul, ol, li
+{
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  /*font-family: Arial, sans-serif;*/
+  width:100%;
+  height: 100%;
+  font-size: 10pt;
+  margin: auto;
+  padding: 0px;
+}
+html {
+height: 100vh;
+}
+
+main {
+height: 100%;
+width: 100%;
+overflow-x: auto;
+overflow-y: hidden;
+}
+
+.cus-report-list-day {
+  /* background-color: rgb(134, 245, 255); */
+  background-color: #b3f7ff;
+}
