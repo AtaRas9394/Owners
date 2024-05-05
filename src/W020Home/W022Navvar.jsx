@@ -1,51 +1,39 @@
-import { ReactNode } from 'react';
-import {
-  Box,
-  Flex,
-  Avatar,
-  Link,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-  useColorMode,
-  Center,
-} from '@chakra-ui/react';
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { motion } from 'framer-motion';
+import {Box,Flex,Button,Stack,VStack} from '@chakra-ui/react';
 
+const menu = [
+  {id: 1,title:"Home"},
+  {id: 2,title:"About Us"},
+  {id: 3,title:"Products"},
+  {id: 4,title:"Contact"},
+]
 
 export default function Nav() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
-    <>
-    <motion.div style={{background:"black",overflow:"hidden"}} initial={{ opacity: 0}} animate={{ opacity: 1}} transition={{ duration: 1}} >
-      <Box  background="gray.900" px={5}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box color="white" fontSize="medium">Logo</Box>
-            <Stack direction={'row'} spacing={7}>
+    <Flex w="100%" h="10%" alignItems="center" justifyContent="space-between">
+      
+      <VStack alignItems="flex-start" spacing={0}>
+      
+        <Box color="white" fontSize="40px" >
+          Ataras
+        </Box>
 
-                <Button variant="none" color="white">
-                    About Us
-                </Button> 
-                <Button variant="none" color="white">
-                    Products
-                </Button> 
-                <Button variant="none" color="white">
-                    Contact
-                </Button> 
+        <Box color="white" fontSize="large">
+          ~Atama & Rascal~
+        </Box>
+      
+      </VStack>
 
+      <Stack direction="row" spacing={7} alignItems="center" justifyContent="flex-end" >
 
-            </Stack>
-        </Flex>
-      </Box>
-      </motion.div>
-    </>
+        {menu.map(item => 
+          <Button key={item.id} variant="none" fontSize="large" color="white" >
+            {item.title}
+          </Button>
+        )}
+      
+      </Stack>
+    
+    </Flex>
   );
 }

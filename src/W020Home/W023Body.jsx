@@ -1,36 +1,53 @@
 import React, { useEffect, useState } from 'react'
-import {  VStack,Box,Stack,Grid,GridItem, Text,SimpleGrid, Square} from '@chakra-ui/react';
+import {  VStack,Image,Box,Stack,Grid,GridItem, Text,SimpleGrid, Square,Flex} from '@chakra-ui/react';
+import Pict1 from '../Static/1000000929.jpg'
+import Pict2 from '../Static/d7e26edd-277e-495d-baa2-d4495e29caaa-1_all_597.jpg'
+import { motion } from 'framer-motion';
 import './Home.css'
 const Bodys = () => {
-    const widthCount = Math.floor(window.innerWidth / 40);
-    const heightCount = Math.floor(window.innerHeight / 20);
 
 
   return (
-    <>
 
-        {/* <SimpleGrid columns={widthCount} spacing={0}>
-            {Array.from(Array(heightCount*widthCount)).map((_, index) => (
-                // <Square key={index} bg={`blackalpha.${Math.floor(Math.random() * 801) + 100}`} size='40px' border='inset' borderColor="black" />
-                //<Square key={index} bg={`blackAlpha.${Math.floor(Math.random() * 10) * 100}`} size='40px' />
-            ))}
-        </SimpleGrid>  */}
-
-        {/* <VStack spacing={1} w='100%' h='100%' justify='center' >
-            <Stack w='100%' h='100%'>
-                <Square w='100%' h='100%' bg="black" />
-            </Stack>
-        </VStack> */}
-        {/* {heightCount.map(item => (
-            <Stack>
+    <VStack w="100%" h="100%" justifyContent="center"  spacing={6}>
+        
+        <Flex w="100%" h="100%" alignItems="center" justifyContent="space-between">
             
-            {widthCount.map(item => (
-              <Box color="black" />
-            ))}
-            </Stack>
-        ))} 
-        </VStack> */}
-    </>
+            <motion.div style={{width:"55%"}} initial={{opacity:0,x:"30%"}} animate={{opacity:1,x:0 }} transition={{ duration: 1,delay:2}}> 
+
+                <Box color="white" fontSize="40px" >
+                    Atama
+                </Box>
+            
+            </motion.div>
+
+            <motion.div style={{width:"45%",display:"flex",alignItems:"center",justifyContent:"flex-end"}} initial={{opacity:0,x:"30%"}} animate={{opacity:1,x:0 }} transition={{ duration: 1,delay:1}}> 
+            
+                <Image alt="" title="test"  src={Pict1} boxSize='75%'  />
+   
+            </motion.div >
+
+        </Flex>
+
+        <Flex w="100%" h="100%" alignItems="center" justifyContent="space-between">
+            
+            <motion.div style={{width:"45%",display:"flex",alignItems:"center",justifyContent:"flex-start"}} initial={{opacity:0,x:"-30%"}} animate={{opacity:1,x:0 }} transition={{ duration: 1,delay:1}}> 
+            
+                <Image alt="2" title="test2"  src={Pict2} boxSize='100%'  />
+            
+            </motion.div > 
+
+            <motion.div style={{width:"55%"}} initial={{opacity:0,x:"-30%"}} animate={{opacity:1,x:0}} transition={{ duration: 1,delay:2}}> 
+            
+                <Box color="white" fontSize="40px" >
+                    Rascal
+                </Box>   
+            
+            </motion.div>
+        
+        </Flex>
+
+    </VStack> 
 
   )
 }

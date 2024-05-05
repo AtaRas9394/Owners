@@ -1,3 +1,6 @@
+body{
+  background-color: black !important;
+}
 .App {
     position: relative;
     height: 100vh;

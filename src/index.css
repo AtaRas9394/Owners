@@ -12,7 +12,7 @@ border-radius: 100px;
 height:20px;
 width: 130px;
 }
-h1, h2, h3, h4, h5, h6, p, table, th, td, div, ul, ol, li
+div
 {
   margin: 0px;
   padding: 0px;
