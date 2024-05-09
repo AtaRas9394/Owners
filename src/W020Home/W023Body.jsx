@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import {  VStack,Image,Box,Stack,Grid,GridItem, Text,SimpleGrid, Square,Flex} from '@chakra-ui/react';
+import React from 'react'
+import {  VStack,Image,Box,Flex} from '@chakra-ui/react';
 import Pict1 from '../Static/1000000929.jpg'
 import Pict2 from '../Static/d7e26edd-277e-495d-baa2-d4495e29caaa-1_all_597.jpg'
 import { motion } from 'framer-motion';
-import './Home.css'
+
 const Bodys = () => {
 
 
@@ -13,7 +13,7 @@ const Bodys = () => {
         
         <Flex w="100%" h="100%" alignItems="center" justifyContent="space-between">
             
-            <motion.div style={{width:"55%"}} initial={{opacity:0,x:"30%"}} animate={{opacity:1,x:0 }} transition={{ duration: 1,delay:2}}> 
+            <motion.div style={{width:"55%"}} initial={{opacity:0,x:"30%"}} animate={{opacity:1,x:0 }} transition={{ duration: 1,delay:2}} > 
 
                 <Box color="white" fontSize="40px" >
                     Atama

@@ -3,7 +3,7 @@ import React from 'react'
 import { Stack,Text,Button, VStack, Flex, Circle } from '@chakra-ui/react';
 import { VolumeUpFill,VolumeMuteFill } from 'react-bootstrap-icons';
 
-const SoundSelect = ({playSound,stopSound}) => {
+const SoundSelect = ({onSelectSound}) => {
 
   return (
             
@@ -13,13 +13,13 @@ const SoundSelect = ({playSound,stopSound}) => {
             サイトへようこそ
         </Flex>
         <Stack direction='row' spacing={6} margin={2} justify='center'>
-            <Button onClick={() => playSound()} variant="none" w='80px' h='100px' aria-label="SoundOn" >
+            <Button onClick={() => onSelectSound(true)} variant="none" w='80px' h='100px' aria-label="SoundOn" >
                 <VStack>
                     <Circle w='75px' h='75px' bg="blue.300" ><VolumeUpFill size={50} color='white' className='rounded-circle'/></Circle>
                     <Text color="blue.300">ON</Text>
                 </VStack>
             </Button>
-            <Button onClick={() => stopSound()} variant="none" w='80px' h='100px' aria-label="SoundOff" >
+            <Button onClick={() => onSelectSound(false)} variant="none" w='80px' h='100px' aria-label="SoundOff" >
                 <VStack>
                     <Circle w='75px' h='75px' bg="blue.300"><VolumeMuteFill size={50} color='white' className='rounded-circle'/></Circle>
                     <Text color="blue.300">OFF</Text>
