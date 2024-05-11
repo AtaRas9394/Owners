@@ -13,7 +13,8 @@ import Loading from '../W010Welcome/W013Loading';
 const Home = () => {
   const [currentComponent, setCurrentComponent] = useState('soundSelection');
   const [selectedSound, setSelectedSound] = useState(false);
-  const [play,{stop,pause}] = useSound(Sound);
+  const [volume,setVolume] = useState(0.5)
+  const [play,{stop,pause}] = useSound(Sound,{volume:volume});
 
 
   useEffect( () => {
@@ -24,7 +25,6 @@ const Home = () => {
       setSelectedSound(home_sound)
       setCurrentComponent('home')
     }
-  
   },[])
 
   const handleSelectSound = (sound) => {
@@ -48,6 +48,18 @@ const Home = () => {
     }    
   }
 
+  const handleVolumeChange = (newValue) => {
+    setVolume(newValue)
+  }
+  
+  const handleSoundSetChange = (soundset) => {
+    if(soundset === true){
+      play();
+    }else{
+      stop();
+    }
+  }
+  
   return (
     <>
       {currentComponent === 'soundSelection' && (
@@ -69,7 +81,7 @@ const Home = () => {
         <motion.div initial={{ opacity: 0}} animate={{opacity:1}} transition={{duration:1}}  onAnimationComplete={handleCompleteHome}>
           <Flex w="100vw" h="100vh" backgroundColor="black">
             <VStack w="60vw" h="100vh" margin="auto" backgroundColor="black" spacing={0}>
-                <Nav />
+                <Nav soundset={selectedSound} onSoundSetChange={handleSoundSetChange} volume={volume} onVolumeChange={handleVolumeChange}/>
                 <Bodys />
             </VStack>
           </Flex>
