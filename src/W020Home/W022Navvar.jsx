@@ -1,5 +1,5 @@
 import {Box,Flex,Button,Stack,VStack,Slider,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { VolumeMute, VolumeOff, VolumeUp } from 'react-bootstrap-icons';
 import { useNavigate } from 'react-router-dom';
 const menu = [
@@ -14,13 +14,17 @@ export default function Nav({soundset,onSoundSetChange,volume,onVolumeChange}) {
   const navigate = useNavigate();
 
   const handleSoundSetOn = () => {
-    setSelectedSound(true)
-    onSoundSetChange(true)
-  }
+    if(selectedSound === false){
+      setSelectedSound(true)
+      onSoundSetChange(true)
+    }
+  };
 
   const handleSoundSetOff = () => {
-    setSelectedSound(false)
-    onSoundSetChange(false)
+    if(selectedSound === true){
+      setSelectedSound(false)
+      onSoundSetChange(false)
+    }
   }
 
   const handleMoveHome = () => {
